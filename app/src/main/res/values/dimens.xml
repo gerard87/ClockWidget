@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="widget_margin">0dp</dimen>
+    <dimen name="big_font_size">64sp</dimen>
+    <dimen name="widget_shadow_dy">0.5</dimen>
+    <dimen name="widget_shadow_radius">8</dimen>
+</resources>
