@@ -13,9 +13,13 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
-    <style name="widget_big_thin">
+
+    <style name="widget">
         <item name="android:textSize">@dimen/big_font_size</item>
         <item name="android:fontFamily">@font/google_sans_regular</item>
+    </style>
+
+    <style name="widget_shadow" parent="widget">
         <item name="android:shadowColor">@color/widget_shadow_color</item>
         <item name="android:shadowDy">@dimen/widget_shadow_dy</item>
         <item name="android:shadowRadius">@dimen/widget_shadow_radius</item>

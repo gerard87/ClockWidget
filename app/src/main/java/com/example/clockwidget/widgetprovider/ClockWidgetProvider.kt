@@ -1,13 +1,11 @@
 package com.example.clockwidget.widgetprovider
 
-import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.graphics.Color
 import android.widget.RemoteViews
 import com.example.clockwidget.R
 
@@ -25,7 +23,7 @@ class ClockWidgetProvider : AppWidgetProvider() {
             // Get the layout for the App Widget
             val views: RemoteViews = RemoteViews(
                 context.packageName,
-                R.layout.appwidget_provider_layout
+                getLayout(sharedPreferences)
             ).apply {
                 setOnClickPendingIntent(R.id.clock, getPendingIntent(context))
                 setTextColor(R.id.clock, getColor(sharedPreferences))
@@ -46,21 +44,7 @@ class ClockWidgetProvider : AppWidgetProvider() {
         }
     }
 
-    private fun getColor(sharedPreferences: SharedPreferences): Int =
-            if (sharedPreferences.getString("color", "0").toString() == "0") Color.WHITE else Color.BLACK
-
     private fun getSharedPrefs(context: Context): SharedPreferences =
             context.getSharedPreferences("clock", Context.MODE_PRIVATE)
-
-    private fun getOpenIntent(context: Context): Intent? =
-            context.packageManager.getLaunchIntentForPackage("com.google.android.deskclock")
-
-    private fun getPendingIntent(context: Context) :PendingIntent {
-        // Create an Intent to launch OpenActivity
-        return getOpenIntent(context).let { intent ->
-            PendingIntent.getActivity(context, 0, intent, 0)
-        }
-    }
-
 
 }

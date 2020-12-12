@@ -10,4 +10,8 @@
         android:dialogTitle="Change font color"
         android:defaultValue="0" />
 
+    <SwitchPreference
+        android:key="shadow"
+        android:title="Enable shadows" />
+
 </PreferenceScreen>
