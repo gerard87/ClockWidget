@@ -6,6 +6,7 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.util.TypedValue
 import android.widget.RemoteViews
 import com.example.clockwidget.R
 
@@ -19,7 +20,6 @@ class ClockWidgetProvider : AppWidgetProvider() {
         // Perform this loop procedure for each App Widget that belongs to this provider
         appWidgetIds.forEach { appWidgetId ->
             val sharedPreferences: SharedPreferences = getSharedPrefs(context)
-
             // Get the layout for the App Widget
             val views: RemoteViews = RemoteViews(
                 context.packageName,
@@ -27,6 +27,8 @@ class ClockWidgetProvider : AppWidgetProvider() {
             ).apply {
                 setOnClickPendingIntent(R.id.clock, getPendingIntent(context))
                 setTextColor(R.id.clock, getColor(sharedPreferences))
+                setTextViewTextSize(R.id.clock, TypedValue.COMPLEX_UNIT_SP,
+                        getTextSize(context, sharedPreferences))
             }
 
             // Tell the AppWidgetManager to perform an update on the current app widget

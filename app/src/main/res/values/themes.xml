@@ -15,7 +15,7 @@
     </style>
 
     <style name="widget">
-        <item name="android:textSize">@dimen/big_font_size</item>
+        <item name="android:textSize">@dimen/default_font_size</item>
         <item name="android:fontFamily">@font/google_sans_regular</item>
     </style>
 

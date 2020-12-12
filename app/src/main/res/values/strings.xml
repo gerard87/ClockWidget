@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Clock Widget</string>
+    <!--  Color preference  -->
+    <string name="color_preference_key">color</string>
+    <string name="color_preference_title">Clock color</string>
+    <string name="color_preference_dialog_title">Select color</string>
+    <!--  Shadow preference  -->
+    <string name="shadow_preference_key">shadow</string>
+    <string name="shadow_preference_title">Shadows</string>
+    <!--  Size preference  -->
+    <string name="size_preference_key">size</string>
+    <string name="size_preference_title">Clock size</string>
+
 </resources>

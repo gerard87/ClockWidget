@@ -4,8 +4,10 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 
+const val CLICK_PACKAGE: String = "com.google.android.deskclock"
+
 private fun getOpenIntent(context: Context): Intent? =
-        context.packageManager.getLaunchIntentForPackage("com.google.android.deskclock")
+        context.packageManager.getLaunchIntentForPackage(CLICK_PACKAGE)
 
 fun getPendingIntent(context: Context) : PendingIntent {
     // Create an Intent to launch OpenActivity

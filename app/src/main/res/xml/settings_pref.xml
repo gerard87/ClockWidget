@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ListPreference
-        android:key="color"
-        android:title="Title font colors"
+        android:key="@string/color_preference_key"
+        android:title="@string/color_preference_title"
         android:summary="%s"
         android:entries="@array/colors"
         android:entryValues="@array/colors_index"
-        android:dialogTitle="Change font color"
-        android:defaultValue="0" />
+        android:dialogTitle="@string/color_preference_dialog_title"
+        android:defaultValue="@integer/default_color_value" />
 
     <SwitchPreference
-        android:key="shadow"
-        android:title="Enable shadows" />
+        android:key="@string/shadow_preference_key"
+        android:title="@string/shadow_preference_title" />
+
+    <SeekBarPreference
+        android:key="@string/size_preference_key"
+        android:defaultValue="@integer/default_text_size"
+        app:showSeekBarValue="true"
+        android:title="@string/size_preference_title"
+        app:min="@integer/min_text_size"
+        android:max="@integer/max_text_size" />
 
 </PreferenceScreen>
