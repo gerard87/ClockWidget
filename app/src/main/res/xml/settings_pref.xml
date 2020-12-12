@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <CheckBoxPreference
-        android:defaultValue="false"
+    <ListPreference
         android:key="color"
-        android:summaryOff="White"
-        android:summaryOn="Dark"
-        android:title="Color"/>
+        android:title="Title font colors"
+        android:summary="%s"
+        android:entries="@array/colors"
+        android:entryValues="@array/colors_index"
+        android:dialogTitle="Change font color"
+        android:defaultValue="0" />
 
 </PreferenceScreen>

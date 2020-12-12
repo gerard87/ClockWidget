@@ -20,27 +20,15 @@ class ClockWidgetProvider : AppWidgetProvider() {
     ) {
         // Perform this loop procedure for each App Widget that belongs to this provider
         appWidgetIds.forEach { appWidgetId ->
-
-            val sharedPreferences: SharedPreferences = context
-                .getSharedPreferences("clock", Context.MODE_PRIVATE)
-
-            // Create an Intent to launch ClockActivity
-            val clockIntent = context.packageManager
-                    .getLaunchIntentForPackage("com.google.android.deskclock")
-
-            val pendingIntent: PendingIntent = clockIntent
-                .let { intent ->
-                    PendingIntent.getActivity(context, 0, intent, 0)
-                }
+            val sharedPreferences: SharedPreferences = getSharedPrefs(context)
 
             // Get the layout for the App Widget
             val views: RemoteViews = RemoteViews(
                 context.packageName,
                 R.layout.appwidget_provider_layout
             ).apply {
-                setOnClickPendingIntent(R.id.clock, pendingIntent)
-                val color = if (sharedPreferences.getBoolean("color", false)) Color.BLACK else Color.WHITE
-                setTextColor(R.id.clock, color)
+                setOnClickPendingIntent(R.id.clock, getPendingIntent(context))
+                setTextColor(R.id.clock, getColor(sharedPreferences))
             }
 
             // Tell the AppWidgetManager to perform an update on the current app widget
@@ -57,5 +45,22 @@ class ClockWidgetProvider : AppWidgetProvider() {
             onUpdate(context, appWidgetManager, appWidgetManager.getAppWidgetIds(componentName))
         }
     }
+
+    private fun getColor(sharedPreferences: SharedPreferences): Int =
+            if (sharedPreferences.getString("color", "0").toString() == "0") Color.WHITE else Color.BLACK
+
+    private fun getSharedPrefs(context: Context): SharedPreferences =
+            context.getSharedPreferences("clock", Context.MODE_PRIVATE)
+
+    private fun getOpenIntent(context: Context): Intent? =
+            context.packageManager.getLaunchIntentForPackage("com.google.android.deskclock")
+
+    private fun getPendingIntent(context: Context) :PendingIntent {
+        // Create an Intent to launch OpenActivity
+        return getOpenIntent(context).let { intent ->
+            PendingIntent.getActivity(context, 0, intent, 0)
+        }
+    }
+
 
 }
