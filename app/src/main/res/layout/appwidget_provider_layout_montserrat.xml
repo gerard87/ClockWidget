@@ -8,7 +8,7 @@
     android:orientation="vertical">
     <TextClock
         android:id="@+id/clock"
-        style="@style/widget_shadow"
+        style="@style/widget.montserrat"
         android:textStyle="normal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

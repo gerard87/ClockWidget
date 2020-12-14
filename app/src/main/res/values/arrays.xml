@@ -9,4 +9,16 @@
         <item>0</item>
         <item>1</item>
     </string-array>
+
+    <string-array name="fonts">
+        <item>Google sans</item>
+        <item>Open sans</item>
+        <item>Montserrat</item>
+    </string-array>
+
+    <string-array name="fonts_index">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 </resources>

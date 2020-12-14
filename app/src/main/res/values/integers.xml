@@ -5,4 +5,6 @@
     <integer name="min_text_size">15</integer>
     <integer name="max_text_size">150</integer>
     <integer name="default_text_size">64</integer>
+
+    <integer name="default_font_value">0</integer>
 </resources>

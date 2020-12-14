@@ -10,5 +10,9 @@
     <!--  Size preference  -->
     <string name="size_preference_key">size</string>
     <string name="size_preference_title">Clock size</string>
+    <!--  Font preference  -->
+    <string name="font_preference_key">font</string>
+    <string name="font_preference_title">Clock font</string>
+    <string name="font_preference_dialog_title">Select font</string>
 
 </resources>

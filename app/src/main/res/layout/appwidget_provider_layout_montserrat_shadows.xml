@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/digital_widget"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top|center_horizontal"
+    android:orientation="vertical">
+    <TextClock
+        android:id="@+id/clock"
+        style="@style/widget.shadow.montserrat"
+        android:textStyle="normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:ellipsize="none"
+        android:format24Hour="HH:mm"
+        android:format12Hour="hh:mm a"
+        android:includeFontPadding="false"
+        android:singleLine="true"
+        android:textColor="@color/white" />
+</LinearLayout>

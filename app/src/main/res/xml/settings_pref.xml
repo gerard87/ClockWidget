@@ -13,7 +13,8 @@
 
     <SwitchPreference
         android:key="@string/shadow_preference_key"
-        android:title="@string/shadow_preference_title" />
+        android:title="@string/shadow_preference_title"
+        android:defaultValue="true"/>
 
     <SeekBarPreference
         android:key="@string/size_preference_key"
@@ -22,5 +23,14 @@
         android:title="@string/size_preference_title"
         app:min="@integer/min_text_size"
         android:max="@integer/max_text_size" />
+
+    <ListPreference
+        android:key="@string/font_preference_key"
+        android:title="@string/font_preference_title"
+        android:summary="%s"
+        android:entries="@array/fonts"
+        android:entryValues="@array/fonts_index"
+        android:dialogTitle="@string/font_preference_dialog_title"
+        android:defaultValue="@integer/default_font_value" />
 
 </PreferenceScreen>

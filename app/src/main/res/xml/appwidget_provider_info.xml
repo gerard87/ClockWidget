@@ -3,7 +3,7 @@
     android:minWidth="40dp"
     android:minHeight="40dp"
     android:updatePeriodMillis="86400000"
-    android:initialLayout="@layout/appwidget_provider_layout"
+    android:initialLayout="@layout/appwidget_provider_layout_google_sans"
     android:resizeMode="horizontal|vertical"
     android:widgetCategory="home_screen">
 </appwidget-provider>
